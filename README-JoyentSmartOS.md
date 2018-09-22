@@ -145,12 +145,14 @@ value of maximum heap size of the JVM(if the first query specifies a maximum hea
 
 4) Create a user mapping for the server.
 ```
-CREATE USER MAPPING FOR postgresTable SERVER jdbc_fm16s OPTIONS(user 'fmUser', password 'fmSecret');
+CREATE USER MAPPING FOR postgresTable SERVER jdbc_fm16s OPTIONS(username 'fmUser', password 'fmSecret');
 ```
 5) Create a foreign table on the server.
 ```
-CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'stest1' );
+CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'fmTableName' );
 ```
+
+alternatively to ```table``` one have the ```query``` option when doing CREATE FOREIGN TABLE
 
 # Testing the configuration <a name="testing"></a>
 1) Query the foreign table.
