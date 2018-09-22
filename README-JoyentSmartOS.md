@@ -69,7 +69,7 @@ root@smartzone:~# PATH=/opt/local/bin/:$PATH make USE_PGXS=1 install
 Assuming you have PostgreSQL installed in /usr/lib/postgresql.If not,please 
 make appropriate changes to the $PATH value set in the command.
 
-7) Ensure ```make install``` executes successfully without any warning or errors.
+8) Ensure ```make install``` executes successfully without any warning or errors.
 
 # Config
 
