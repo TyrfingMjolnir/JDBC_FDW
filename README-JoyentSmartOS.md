@@ -73,6 +73,8 @@ make appropriate changes to the $PATH value set in the command.
 
 # Config <a name="config"></a>
 
+0) As a general design I prefer to have separate schema for different purposes, such as '''CREATE SCHEMA fm```
+
 1) Enter psql.
 ```
 root@smartzone:~# psql -U postgres
@@ -116,7 +118,7 @@ curl -kLO fmdl.filemaker.com/extras/FM17_xDBC_17.0.1.dmg
 ### Command to set up server that uses jdbc_fdw as the foreign data wrapper:
 ``` 
 CREATE
-  SERVER jdbc_fm16s
+  SERVER fm.jdbc_fm16s
   FOREIGN DATA WRAPPER jdbc_fdw
   OPTIONS(
     drivername 'com.filemaker.jdbc.Driver',
@@ -153,7 +155,7 @@ Also,since the JVM being used in jdbc fdw is created only once for the entire
 psql session,therefore,the first query issued that uses jdbc fdw shall set the
 value of maximum heap size of the JVM(if the first query specifies a maximum heap value).
 
-4) Create a user mapping for the server.
+4) Create a user mapping for the server( pgUsername is any exisiting pg user for mapping to an existing fmUser with password )
 ```
 CREATE USER MAPPING FOR pgUsername SERVER jdbc_fm16s OPTIONS(username 'fmUsername', password 'fmSecret');
 ```
