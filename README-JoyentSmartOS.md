@@ -5,8 +5,8 @@
 + FileMaker 16 Server JDBC
 + OpenJDK 7
 
-# How I did the install, config, and testing
-## Install
+# How I did the [install](#install), [config](#config), and [testing](#testing)
+## <a name="install"></a>Install
 
 1) Ensure you have the PostgreSQL dev package installed.If not,please install the latest version.
 ```
@@ -71,7 +71,7 @@ make appropriate changes to the $PATH value set in the command.
 
 8) Ensure ```make install``` executes successfully without any warning or errors.
 
-# Config
+# Config <a name="config"></a>
 
 1) Enter psql.
 ```
@@ -152,7 +152,7 @@ CREATE USER MAPPING FOR postgres SERVER jdbc_fm16s;
 CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'stest1' );
 ```
 
-# Testing the configuration
+# Testing the configuration <a name="testing"></a>
 1) Query the foreign table.
 ```
 gitc=# SELECT * FROM test13;
