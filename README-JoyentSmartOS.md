@@ -159,7 +159,7 @@ CREATE USER MAPPING FOR postgresTable SERVER jdbc_fm16s OPTIONS(username 'fmUser
 ```
 5) Create a foreign table on the server.
 ```
-CREATE FOREIGN TABLE fm16s.test1( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'fmTableName' );
+CREATE FOREIGN TABLE fm16s.test1( a text, b text, c text ) SERVER jdbc_fm16s OPTIONS( table 'fmTableName' );
 ```
 
 alternatively to ```table``` one have the ```query``` option when doing CREATE FOREIGN TABLE
@@ -173,16 +173,15 @@ CREATE FOREIGN TABLE fm16s.test2( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS(
 # Testing the configuration <a name="testing"></a>
 1) Query the foreign table.
 ```
-gitc=# SELECT * FROM test13;
+yourdesireddatabase=# EXPLAIN ANALYZE VERBOSE SELECT * FROM fm16s.test1;
 ```
 The output should be :
 ```
 Connection successful.
 
- a | b |  c   
----+---+------
- 4 | 5 |    6
- 7 | 8 |    9
- 1 | 2 | 1009
-(3 rows)
+ a  | b |  c   
+----+---+------
+ 80 | 3 |    2
+  1 | 6 |    5
+ 16 | 1 | 1111
 ```
