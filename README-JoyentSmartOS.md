@@ -19,30 +19,32 @@ root@smartzone:~# vim $( pg_config --pgxs )
 mkdir -p /opt/local/dev/
 cd /opt/local/dev/
 ```
-Here I removed the "--as-needed -Wl" option and made sure there was ljvm.so was accessible to this location: /opt/local/lib/
 
-2) Get JDBC_FDW source.
+2) Get postgres 9.6 source.
 ```
 root@smartzone:~$ git clone -b REL9_6_STABLE https://github.com/postgres/postgres
 root@smartzone:~$ cd postgres
 root@smartzone:~$ ./configure
+```
+3) Get JDBC_FDW source.
+```
 root@smartzone:~$ cd contrib
 root@smartzone:~$ git clone https://github.com/atris/JDBC_FDW
 ```
 
-3) Enter the JDBC_FDW folder.
+4) Enter the JDBC_FDW folder.
 ```
 root@smartzone:~$ cd JDBC_FDW
 ``` 
 
-4) Execute make clean
+5) Execute make clean
 ```
 root@smartzone:~$ sudo PATH=/opt/local/bin/:$PATH make USE_PGXS=1 clean
 ```
 Assuming you have PostgreSQL installed in /usr/lib/postgresql.If not,please 
 make appropriate changes to the $PATH value set in the command.
 
-5) Execute make install
+7) Execute make install
 (You may have to change to root/installation privileges before executing Make 
 Install)
 
@@ -67,16 +69,16 @@ root@smartzone:~# PATH=/opt/local/bin/:$PATH make USE_PGXS=1 install
 Assuming you have PostgreSQL installed in /usr/lib/postgresql.If not,please 
 make appropriate changes to the $PATH value set in the command.
 
-6) Ensure ```make install``` executes successfully without any warning or errors.
+7) Ensure ```make install``` executes successfully without any warning or errors.
 
 # Config
 
-7) Enter psql.
+1) Enter psql.
 ```
 root@smartzone:~# psql -U postgres
 ```
 
-8) Set up jdbc_fdw extension.
+2) Set up jdbc_fdw extension.
 ```
 \c yourdesireddatabase;
 CREATE EXTENSION jdbc_fdw;
@@ -86,7 +88,7 @@ Optionally you can list available FDWs on your server
 SELECT * FROM pg_available_extensions WHERE name ~ 'fdw';
 ```
 
-9) Create a server that uses jdbc_fdw.
+3) Create a server that uses jdbc_fdw.
 ### Make sure you cp [fmjdbc.jar](https://support.filemaker.com/s/answerview?anum=12921) /opt/local/libpostgresql/
 
 ```
@@ -141,15 +143,15 @@ Also,since the JVM being used in jdbc fdw is created only once for the entire
 psql session,therefore,the first query issued that uses jdbc fdw shall set the
 value of maximum heap size of the JVM(if the first query specifies a maximum heap value).
 
-10) Create a user mapping for the server.
+4) Create a user mapping for the server.
 ```
 CREATE USER MAPPING FOR postgres SERVER jdbc_fm16s;
 ```
-11) Create a foreign table on the server.
+5) Create a foreign table on the server.
 ```
 CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'stest1' );
 ```
-12) Query the foreign table.
+6) Query the foreign table.
 ```
 gitc=# SELECT * FROM test13;
 ```
