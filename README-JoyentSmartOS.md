@@ -5,7 +5,7 @@
 + FileMaker 16 Server JDBC
 + OpenJDK 7
 
-# How I did the install and config
+# How I did the install, config, and testing
 ## Install
 
 1) Ensure you have the PostgreSQL dev package installed.If not,please install the latest version.
