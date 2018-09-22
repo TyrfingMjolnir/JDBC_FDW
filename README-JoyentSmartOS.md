@@ -159,7 +159,7 @@ gitc=# SELECT * FROM test13;
 ```
 The output should be :
 ```
-Connection to SQLite 3.7.2 successful.
+Connection successful.
 
  a | b |  c   
 ---+---+------
