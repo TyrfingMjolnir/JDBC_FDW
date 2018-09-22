@@ -87,7 +87,17 @@ Optionally you can list available FDWs on your server
 ```
 SELECT * FROM pg_available_extensions WHERE name ~ 'fdw';
 ```
-
+mine outputted
+```
+testdb=# SELECT * FROM pg_available_extensions WHERE name ~ 'fdw';
+     name     | default_version | installed_version |                      comment
+--------------+-----------------+-------------------+----------------------------------------------------
+ mysql_fdw    | 1.1             | 1.1               | Foreign data wrapper for querying a MySQL server
+ postgres_fdw | 1.0             |                   | foreign-data wrapper for remote PostgreSQL servers
+ jdbc_fdw     | 1.0             | 1.0               | Foreign data wrapper for querying JDBC
+ file_fdw     | 1.0             |                   | foreign-data wrapper for flat file access
+(4 rows)
+```
 3) Create a server that uses jdbc_fdw.
 ### Make sure you cp [fmjdbc.jar](https://support.filemaker.com/s/answerview?anum=12921) /opt/local/libpostgresql/
 
