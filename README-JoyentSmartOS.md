@@ -73,7 +73,7 @@ make appropriate changes to the $PATH value set in the command.
 
 # Config <a name="config"></a>
 
-0) As a general design I prefer to have separate schema for different purposes, such as '''CREATE SCHEMA fm```
+0) As a general design pattern I prefer to have a separate schema for different purposes, such as ```CREATE SCHEMA fm```
 
 1) Enter psql.
 ```
