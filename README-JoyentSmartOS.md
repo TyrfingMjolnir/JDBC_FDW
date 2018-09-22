@@ -8,7 +8,7 @@
 # How I did the [install](#install), [config](#config), and [testing](#testing)
 ## <a name="install"></a>Install
 
-1) Ensure you have the PostgreSQL dev package installed.If not,please install the latest version.
+1) Login to a Joyent SmartOS Zone, mine is called sn07postgres04 installed prerequisits. 
 ```
 zlogin <<someUUID>>
 root@smartzone:~# pkgin update
