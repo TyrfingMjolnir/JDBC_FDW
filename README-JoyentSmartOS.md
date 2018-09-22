@@ -5,6 +5,9 @@
 + FileMaker 16 Server JDBC
 + OpenJDK 7
 
+# How I did the install and config
+## Install
+
 1) Ensure you have the PostgreSQL dev package installed.If not,please install the latest version.
 ```
 zlogin <<someUUID>>
@@ -65,6 +68,8 @@ Assuming you have PostgreSQL installed in /usr/lib/postgresql.If not,please
 make appropriate changes to the $PATH value set in the command.
 
 6) Ensure ```make install``` executes successfully without any warning or errors.
+
+# Config
 
 7) Enter psql.
 ```
