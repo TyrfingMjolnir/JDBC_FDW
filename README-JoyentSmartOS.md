@@ -151,7 +151,9 @@ CREATE USER MAPPING FOR postgres SERVER jdbc_fm16s;
 ```
 CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'stest1' );
 ```
-6) Query the foreign table.
+
+# Testing the configuration
+1) Query the foreign table.
 ```
 gitc=# SELECT * FROM test13;
 ```
