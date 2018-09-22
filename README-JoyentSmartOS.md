@@ -159,17 +159,16 @@ CREATE USER MAPPING FOR postgresTable SERVER jdbc_fm16s OPTIONS(username 'fmUser
 ```
 5) Create a foreign table on the server.
 ```
-CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'fmTableName' );
+CREATE FOREIGN TABLE fm16s.test1( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( table 'fmTableName' );
 ```
 
 alternatively to ```table``` one have the ```query``` option when doing CREATE FOREIGN TABLE
 
 ```
-CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS(
+CREATE FOREIGN TABLE fm16s.test2( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS(
   query 'SELECT * FROM fmTable ORDER BY modificationTimestamp DESC FETCH FIRST 5 ROWS ONLY'
 );
 ```
-
 
 # Testing the configuration <a name="testing"></a>
 1) Query the foreign table.
