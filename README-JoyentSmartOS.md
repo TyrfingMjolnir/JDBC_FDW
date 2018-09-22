@@ -173,15 +173,13 @@ CREATE FOREIGN TABLE fm16s.test2( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS(
 # Testing the configuration <a name="testing"></a>
 1) Query the foreign table.
 ```
-yourdesireddatabase=# EXPLAIN ANALYZE VERBOSE SELECT * FROM fm16s.test1;
-```
-The output should be :
-```
-Connection successful.
-
- a  | b |  c   
-----+---+------
- 80 | 3 |    2
-  1 | 6 |    5
- 16 | 1 | 1111
+yourdesireddatabase=# SELECT * FROM fm.fm16s00users LIMIT 5;
+   a   | b  | c
+-------+----+----
+ 80    |    |
+ 14000 |    |
+ 17120 |    |
+ 25000 |    |
+ 22    | 27 | 16
+(5 rows)
 ```
