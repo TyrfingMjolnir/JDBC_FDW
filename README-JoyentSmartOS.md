@@ -1,4 +1,4 @@
-# Installation instructions for "packaged" installation of PostgreSQL with Apple FileMaker 16 Server as JDBC server for running on illumos, joyent smartos, or other open solaris distros
+# Installation instructions for "packaged" installation of PostgreSQL with a sample config of Apple FileMaker 16 Server as JDBC server through Postgres FDW for illumos, joyent smartos, or other open solaris distros
 ===
 1) Ensure you have the PostgreSQL dev package installed.If not,please install the latest version.
 ```
