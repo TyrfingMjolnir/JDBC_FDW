@@ -5,4 +5,4 @@ FDW that wraps JDBC for PostgreSQL.It can be used to connect and fetch data from
 
 Please read the README before using jdbc_fdw.
 
-[README-JoyentSmartOS.md](README-JoyentSmartOS.md)
+[README-JoyentSmartOS.md](README-JoyentSmartOS.md  test )
