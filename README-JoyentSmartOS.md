@@ -164,6 +164,11 @@ CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( tabl
 
 alternatively to ```table``` one have the ```query``` option when doing CREATE FOREIGN TABLE
 
+```
+CREATE FOREIGN TABLE test13( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS( query '"SELECT * FROM fmTable ORDER BY modificationTimestamp DESC FETCH FIRST 5 ROWS ONLY' );
+```
+
+
 # Testing the configuration <a name="testing"></a>
 1) Query the foreign table.
 ```
