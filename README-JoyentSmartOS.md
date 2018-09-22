@@ -167,7 +167,7 @@ CREATE FOREIGN TABLE fm16s.test1( a text, b text, c text ) SERVER jdbc_fm16s OPT
 alternatively ```query``` can replace ```table``` as some sort of VIEW; primarily to avoid pulling all the data from FileMaker to Postgres as LIMIT will never be remotely; however an FQL query can be run pr as below. Even though you most likely would sned a timestamp from last rather than than a static LIMIT of 5.
 
 ```
-CREATE FOREIGN TABLE fm16s.test2( a int,b int,c int ) SERVER jdbc_fm16s OPTIONS(
+CREATE FOREIGN TABLE fm16s.test2( a text, b text, c text ) SERVER jdbc_fm16s OPTIONS(
   query 'SELECT * FROM fmTable ORDER BY modificationTimestamp DESC FETCH FIRST 5 ROWS ONLY'
 );
 ```
