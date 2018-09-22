@@ -5,4 +5,4 @@ FDW that wraps JDBC for PostgreSQL.It can be used to connect and fetch data from
 
 Please read the README before using jdbc_fdw.
 
-[README-JoyentSmartOS.md](README-JoyentSmartOS.md  test )
+[Installation instructions for "packaged" installation of PostgreSQL with a sample config of Apple FileMaker 16 Server as JDBC server through Postgres FDW for illumos, joyent smartos, or other open solaris distros](README-JoyentSmartOS.md)
