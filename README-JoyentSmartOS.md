@@ -80,7 +80,7 @@ make appropriate changes to the $PATH value set in the command.
 root@smartzone:~# psql -U postgres
 ```
 
-2) Set up jdbc_fdw extension.
+2) Set up jdbc_fdw extension. Official documentation: https://www.postgresql.org/docs/9.6/static/postgres-fdw.html
 ```
 \c yourdesireddatabase;
 CREATE EXTENSION jdbc_fdw;
