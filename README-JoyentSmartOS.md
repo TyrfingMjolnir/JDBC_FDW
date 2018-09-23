@@ -20,7 +20,7 @@ mkdir -p /opt/local/dev/
 cd /opt/local/dev/
 ```
 
-2) Get postgres 9.6 source.
+2) Get postgres 9.6 source( we will only use this for reference when compiling the FDW below. )
 ```
 root@smartzone:~$ git clone -b REL9_6_STABLE https://github.com/postgres/postgres
 root@smartzone:~$ cd postgres
