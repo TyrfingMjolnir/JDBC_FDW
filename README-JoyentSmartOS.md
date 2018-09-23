@@ -164,7 +164,9 @@ CREATE USER MAPPING FOR pgUsername SERVER jdbc_fm16s OPTIONS(username 'fmUsernam
 CREATE FOREIGN TABLE fm16s.test1( a text, b text, c text ) SERVER jdbc_fm16s OPTIONS( table 'fmTableName' );
 ```
 
-alternatively ```query``` can replace ```table``` as some sort of VIEW; primarily to avoid pulling all the data from FileMaker to Postgres as LIMIT will never be remotely; however an FQL query can be run pr as below. Even though you most likely would sned a timestamp from last rather than than a static LIMIT of 5. Note that you are never really interested in running the query bareback as in the above example if there are more than 10 records in the table. You really want to design the ```query``` below to get the best performance.
+alternatively ```query``` can replace ```table``` as some sort of VIEW; primarily to avoid pulling all the data from FileMaker to Postgres as LIMIT will never be remotely; however an FQL query can be run pr as below. Even though you most likely would sned a timestamp from last rather than than a static LIMIT of 5.
+
+Note that you are never really interested in running the query bareback as in the above utilizing ```table``` if there are more than 10 records in that table; as the query above will not be run remotely, postgres will pull down all the records from the FileMaker side and then do LIMIT 5. What you really want to do is design the ```query``` below in the optimum way for your solution to have some kind of performance.
 
 ```
 CREATE FOREIGN TABLE fm16s.test2( a text, b text, c text ) SERVER jdbc_fm16s OPTIONS(
