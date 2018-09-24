@@ -187,3 +187,52 @@ yourdesireddatabase=# SELECT * FROM fm.fm16s00users LIMIT 5;
  22    | 27 | 16
 (5 rows)
 ```
+
+Some unofficial unofficial information of FQL( FileMaker Query Language ) errors
+
+|FQL Error|Error reported by FQL engine|
+|------:|:--------|
+|FQL0001|There is an error in the syntax of the query.|
+|FQL0002|The table named "?0" does not exist.|
+|FQL0003|The table named "?0" already exists in this query.|
+|FQL0004|The query is too complex. The maximum number of tables has been exceeded.|
+|FQL0005|Expressions involving aggregations are not supported.|
+|FQL0006|"The column named "?0" appears in more than one table in the column reference's scope."|
+|FQL0007|The column named "?0" does not exist in any table in the column reference's scope.|
+|FQL0008|The table named "?0" does not exist in the column reference's scope.|
+|FQL0009|The column named "?1" does not exist in table "?0".|
+|FQL0010|The literal value "?0" is not a valid DATE, TIME or TIMESTAMP.|
+|FQL0011|Predicate must contain a logical operation (=, <, OR, AND, IS NULL, ...).|
+|FQL0012|The ordinal reference "?0" in the ORDER BY clause is not valid.|
+|FQL0013|Incompatible types in assignment.|
+|FQL0014|The number of values in a VALUES row value constructor does not match the number of values in the target.|
+|FQL0015|The number of values in an INSERT...SELECT statement does not match the number of values in the target.|
+|FQL0016|A subquery contains an illegal outer reference to a column in the INSERT's target table.|
+|FQL0017|An expression contains data types that cannot be compared.|
+|FQL0018|An expression contains incompatible data types.|
+|FQL0019|The result data type of a CASE expression cannot be inferred; they are all NULL.|
+|FQL0020|An invalid number of parameters was supplied to the function "?0"|
+|FQL0021|Parameter number ?0 to the function "?1" is not of the correct type.|
+|FQL0022|A subquery expression must have exactly one value in the SELECT list.|
+|FQL0023|A CAST expression requested an invalid data type conversion.|
+|FQL0024|A reference to ROWID must be qualified if more than one table is present in the query.|
+|FQL0025|All non-aggregated column references in the SELECT list and HAVING clause must be in the GROUP BY clause.|
+|FQL0026|The number of columns in both inputs to a UNION operation must be the same.|
+|FQL0027|The data types of corresponding columns in the inputs to a UNION operation must be the same.|
+|FQL0028|Field repetitions must be numeric and between 1 and ?0.|
+|FQL0029|A field repetition in the SET clause of an UPDATE statement must be a constant.|
+|FQL0030|"?0" is an invalid function.|
+|FQL0031|The the parameter's type cannot be inferred in this context. At least one query parameter must be an expression, a column or a constant.|
+|FQL0032|A query may contain either named parameters or dynamic parameters, but not both.|
+|FQL0033|Column names in FROM clause subqueries must be unique.|
+|FQL0034|The number of output columns in a FROM clause subquery must match the number of columns in the table's name list.|
+|FQL0035|Cursor support is not enabled for this query.|
+|FQL0036|A cursor with the name "?0" already exists.|
+|FQL0037|There is no cursor with the name "?0".|
+|FQL0038|The cursor "?0" is already open.|
+|FQL0039|The cursor "?0" is not open.|
+|FQL0040|The target cursor "?0" does not reference a query that is valid for WHERE CURRENT OF.|
+|FQL0041|The target cursor "?0" does not reference the same table as the current statement.|
+|FQL0042|The default value for column "?0" does not match the column's data type.|
+|FQL0043|The string "?0" is not a valid stream name.|
+|FQL0044|The column "?0" is not valid in this context. The targets of GETAS and PUTAS must be Container fields.|
