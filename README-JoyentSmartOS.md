@@ -188,7 +188,7 @@ yourdesireddatabase=# SELECT * FROM fm.fm16s00users LIMIT 5;
 (5 rows)
 ```
 
-Some unofficial unofficial information of FQL( FileMaker Query Language ) errors
+Some unofficial [unofficial information](https://wiki.myfmbutler.com/index.php?title=DoSQL_2#Unofficial_FileMaker_FQL_error_list) of FQL( FileMaker Query Language ) errors
 
 | FQL Error | Error reported by FQL engine |
 |------:|:--------|
