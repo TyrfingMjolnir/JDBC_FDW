@@ -190,7 +190,7 @@ yourdesireddatabase=# SELECT * FROM fm.fm16s00users LIMIT 5;
 
 Some unofficial unofficial information of FQL( FileMaker Query Language ) errors
 
-|FQL Error|Error reported by FQL engine|
+| FQL Error | Error reported by FQL engine |
 |------:|:--------|
 |FQL0001|There is an error in the syntax of the query.|
 |FQL0002|The table named "?0" does not exist.|
